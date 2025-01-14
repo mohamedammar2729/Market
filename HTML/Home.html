@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Meta tags for character set and viewport settings -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Font Awesome for icons -->
+    <script
+      src="https://kit.fontawesome.com/a076d05399.js"
+      crossorigin="anonymous"
+    ></script>
+    <!-- Link to the external CSS file for styling the home page -->
+    <link rel="stylesheet" href="../Style/Home.css" />
+    <title>Home</title>
+  </head>
+  <body>
+    <!-- Navigation bar -->
+    <nav>
+      <ul class="nav-left">
+        <li class="left"><a href="./Home.html">Home</a></li>
+        <li class="left"><a href="./About.html">About</a></li>
+      </ul>
+      <ul class="nav-right">
+        <li class="right">
+          <!-- Cart icon with quantity badge -->
+          <span id="cart-icon" style="position: relative">
+            &#128722;
+            <span
+              id="cart-quantity"
+              style="
+                position: absolute;
+                top: -10px;
+                right: -10px;
+                background: red;
+                color: white;
+                border-radius: 50%;
+                padding: 2px 6px;
+                font-size: 12px;
+                display: none;
+              "
+              >0</span
+            >
+          </span>
+        </li>
+
+        <li class="right"><span id="r2"></span></li>
+        <li class="right">
+          <button
+            id="logoutBtn"
+            style="
+              display: none;
+              background: #c0392b;
+              color: #fff;
+              padding: 8px 16px;
+              border: none;
+              border-radius: 4px;
+              cursor: pointer;
+              margin-right: 50px;
+            "
+          >
+            Logout
+          </button>
+        </li>
+      </ul>
+    </nav>
+
+    <!-- Image slider -->
+    <div class="slider">
+      <div class="slides">
+        <div class="slide"><img src="../img/img1.jpg" alt="Image 1" /></div>
+        <div class="slide"><img src="../img/img2.jpg" alt="Image 2" /></div>
+        <div class="slide"><img src="../img/img3.jpg" alt="Image 3" /></div>
+        <div class="slide"><img src="../img/img4.jpg" alt="Image 4" /></div>
+      </div>
+      <div class="controls">
+        <button class="control prev">&#10094;</button>
+        <button class="control next">&#10095;</button>
+      </div>
+      <div class="dots">
+        <span class="dot" data-index="0"></span>
+        <span class="dot" data-index="1"></span>
+        <span class="dot" data-index="2"></span>
+        <span class="dot" data-index="3"></span>
+      </div>
+    </div>
+
+    <!-- Product filter bar -->
+    <div class="container">
+      <div class="filter-bar">
+        <span class="category" onclick="filterProductsALL('all')">ALL</span>
+        <span class="category" onclick="filterProductsClothes('clothes')"
+          >Clothes</span
+        >
+        <span class="category" onclick="filterProductsBooks('books')"
+          >Books</span
+        >
+        <span
+          class="category"
+          onclick="filterProductsElectronics('electronics')"
+          >Electronics</span
+        >
+      </div>
+
+      <!-- Product grid -->
+      <div class="grid">
+        <div class="card">
+          <img src="../img/clothes0.jpg" alt="Clothes 1" />
+          <h3>Jacket</h3>
+          <p>Price: 80$</p>
+        </div>
+        <div class="card">
+          <img src="../img/book0.jpg" alt="Book 1" />
+          <h3>Book</h3>
+          <p>Price: 50$</p>
+        </div>
+        <div class="card">
+          <img src="../img/electronic0.jpg" alt="elec 1" />
+          <h3>Phone</h3>
+          <p>Price: 500$</p>
+        </div>
+        <div class="card">
+          <img src="../img/book1.jpg" alt="Book 2" />
+          <h3>Magazine</h3>
+          <p>Price: 15$</p>
+        </div>
+        <div class="card">
+          <img src="../img/electronic1.jpg" alt="elec 2" />
+          <h3>Camera</h3>
+          <p>Price: 800$</p>
+        </div>
+      </div>
+    </div>
+    <button
+      id="backToTop"
+      title="Back to top"
+      style="
+        display: none;
+        position: fixed;
+        bottom: 30px;
+        right: 30px;
+        z-index: 99;
+        background: #ff6347;
+        color: #fff;
+        border: none;
+        padding: 10px 15px;
+        border-radius: 4px;
+        cursor: pointer;
+      "
+    >
+      Top
+    </button>
+
+    <script>
+      window.onscroll = function () {
+        if (document.documentElement.scrollTop > 20) {
+          backToTop.style.display = "block";
+        } else {
+          backToTop.style.display = "none";
+        }
+      };
+      backToTop.addEventListener("click", () => {
+        document.body.scrollTop = 0;
+        document.documentElement.scrollTop = 0;
+      });
+      document.addEventListener("DOMContentLoaded", () => {
+        const userName = localStorage.getItem("name");
+        const logoutBtn = document.getElementById("logoutBtn");
+        if (userName) {
+          logoutBtn.style.display = "inline-block";
+          logoutBtn.addEventListener("click", () => {
+            localStorage.removeItem("name");
+            window.location.href = "../index.html";
+          });
+        } else {
+          const log = document.getElementById("r2");
+          log.addEventListener("click", () => {
+            window.location.href = "../index.html";
+          });
+        }
+      });
+    </script>
+    <script type="module" src="../Js/Home.js"></script>
+  </body>
+</html>
