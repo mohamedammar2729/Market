@@ -10,7 +10,7 @@ A modern, responsive e-commerce platform built with pure HTML, CSS, and JavaScri
 - [Features](#-features)
 - [Tech Stack](#-tech-stack)
 - [Installation](#-installation)
-- [Usage](#-usage)
+- [Usage](#%EF%B8%8F-usage)
 - [Project Structure](#-project-structure)
 - [Screenshots](#-screenshots)
 - [Contributing](#-contributing)
