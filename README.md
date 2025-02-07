@@ -70,7 +70,7 @@ A modern, responsive e-commerce platform built with pure HTML, CSS, and JavaScri
 - Open index.html in any modern web browser
 - For local development, use Live Server extension (VS Code recommended)
 
-### 🖥️ Usage
+## 🖥️ Usage
 1. **Browse Products**
 - Navigate through product categories
 - Click product cards for detailed view
